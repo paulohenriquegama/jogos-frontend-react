@@ -1,0 +1,15 @@
+.formGame{
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+
+.formGame label{
+  text-align: left;
+}
+
+.formGame input{
+  margin-bottom: 1rem;
+}

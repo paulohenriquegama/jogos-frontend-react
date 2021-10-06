@@ -1,0 +1,28 @@
+.bloco-gameCard{
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem auto;
+}
+.gameCard {
+  width: 30%;
+  height: 30rem;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  justify-items: center;
+}
+
+.gameCard img {
+  width: 90%;
+  height: 98%;
+  
+}
+
+.footerCardGame{
+  width: 90%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
