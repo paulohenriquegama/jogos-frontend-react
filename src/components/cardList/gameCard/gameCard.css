@@ -12,12 +12,15 @@
   display: grid;
   grid-template-rows: 1fr 3fr 1fr;
   justify-items: center;
+  align-items: center;
+  margin: .5em;
+  border-radius: .5em;
 }
 
 .gameCard img {
   width: 90%;
   height: 98%;
-  
+  border-radius: .5em;
 }
 
 .footerCardGame{
