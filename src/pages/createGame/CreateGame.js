@@ -2,7 +2,7 @@ import React from 'react';
 import { Api } from '../../api/Api';
 import './createGame.css';
 
-export default function CreateGame() {
+export default function CreateGame(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target.title.value
@@ -31,6 +31,12 @@ export default function CreateGame() {
 
     const response = await Api.buildApiPostRequest(Api.createGameUrl(),playload);
     
+    const body = await response.json();
+
+    if (response.status === 201) {
+      const id = body.id;
+      props.history.push(`/game/${id}`);
+    }
     console.log(response)
   };
 

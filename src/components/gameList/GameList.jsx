@@ -18,7 +18,9 @@ export default function GameList() {
 
   return (
     <div className="bloco-gameList">
-      <GameCard list={games}/>
+      {games.map((game) => (
+      <GameCard game={game}/>
+      ))}
     </div>
   )
 }

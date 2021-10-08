@@ -1,27 +1,28 @@
 import React, { useState } from 'react'
 import "./gameCard.css"
 
-export const GameCard = (props) => {
-  const games = props.list
+export const GameCard = ({game}) => {
+  
 
   return (
-    <div className="bloco-gameCard">
-      {games.map((games) => (
-        <div key={games.id} className='gameCard'>
+    <div className="gameCard">
+      
+        <div key={game.id} className='
+        '>
           <div>
-            {games.title}
+            {game.title}
           </div>
           <div>
-            <img src={games.capa} alt={games.title}/>
+            <img src={game.capa} alt={game.title}/>
           </div>
           <div className="footerCardGame">
             <div className="year">
-              {games.year}
+              {game.year}
             </div>
-            {games.note}
+            {game.note}
           </div>
         </div>
-      ))}
+     
     </div>
   )
 }
