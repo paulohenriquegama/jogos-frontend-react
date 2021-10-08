@@ -1,26 +1,39 @@
-.bloco-gameCard{
+/* .bloco-gameCard{
   width: 90%;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   margin: 5rem auto;
-}
+} */
 .gameCard {
-  width: 30%;
-  height: 30rem;
+  width: 25em;
+  height: 25rem;
   background-color: aquamarine;
   display: grid;
   grid-template-rows: 1fr 3fr 1fr;
   justify-items: center;
   align-items: center;
-  margin: .5em;
+  margin: .2em;
   border-radius: .5em;
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: all ease .5s;
+}
+
+.gameCard:hover{
+  transform: scale(1)
+}
+
+.gameCard-capa{
+ display:flex;
+ justify-content: center;
 }
 
 .gameCard img {
   width: 90%;
   height: 98%;
   border-radius: .5em;
+ 
 }
 
 .footerCardGame{

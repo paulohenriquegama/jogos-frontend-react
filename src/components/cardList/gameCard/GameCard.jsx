@@ -9,7 +9,7 @@ export const GameCard = ({game}) => {
       <div>
         {game.title}
       </div>
-      <div>
+      <div className="gameCard-capa">
         <img src={game.capa} alt={game.title}/>
       </div>
       <div className="footerCardGame">
