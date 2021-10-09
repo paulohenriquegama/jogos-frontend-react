@@ -50,7 +50,7 @@ export default function CreateGame(props) {
         <input type="text" id="capa" name="capa"/>
 
         <label htmlFor="description">Descrição:</label>
-        <input type="text" id="description" name="description"/>
+        <textarea type="text" id="description" name="description"/>
 
         <label htmlFor="year">Ano:</label>
         <input type="text" id="year" name="year"/>
