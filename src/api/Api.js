@@ -3,6 +3,8 @@ export const Api = {
 
   readAllGameUrl: () => Api.baseUrl + "/game",
 
+  readByIdGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
+
   createGameUrl: () => Api.baseUrl + "/game",
 
   //GET requests

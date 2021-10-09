@@ -1,0 +1,191 @@
+.viewGame{
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: rgba(65, 180, 226, 0.246);
+  border-radius: .2em;
+}
+.viewGame-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.viewGame-body{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aquamarine; */
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr;
+}
+
+/* Area 1 */
+
+.viewGame-area1{
+  width: 100%;
+  height: 100%;
+  /* background-color: azure; */
+}
+
+.viewGame-favorite{
+  margin-left: 1em;
+  align-self: flex-start;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.viewGame-note-year{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 1em;
+}
+
+.viewGame-img{
+  /* background-color:antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.viewGame-img img{
+  width: 75%;
+  height: 100%;
+  border-radius: .5em;
+}
+
+.viewGame-note{
+  color: #ffd700;
+  
+}
+
+.viewGame-year{
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* Area 2 */
+
+.viewGame-area2{
+  /* background-color: aqua; */
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+ 
+}
+
+.viewGame-btnEdit, .viewGame-btnDelete, 
+.viewGame-btnPlay{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.viewGame-btnEdit button,
+.viewGame-btnDelete button,
+.viewGame-btnPlay button{
+  cursor: pointer;
+  border-radius: .3em;
+  padding: .3em;
+}
+
+.viewGame-btnEdit button,
+.viewGame-btnDelete button{
+  width: 75%;
+  margin-bottom: 1em;
+}
+
+.viewGame-btnPlay button{
+  width: 100%;
+  margin-top: 2em;
+
+}
+
+/* Area 3 */
+
+.viewGame-area3{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2.2em;
+}
+
+.viewGame-trailer{
+  width: 100%;
+  height: 55%;
+  
+}
+.viewGame-trailer iframe{
+  border-radius: .3em;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .viewGame{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .viewGame-body{
+    margin: 0;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .viewGame-area1{
+    /* background-color: lawngreen; */
+    width: 100%;
+    height: 45%;
+   
+  }
+  .viewGame-img {
+    height: 90%;
+  }
+  .viewGame-img img {
+    width: 70%;
+  }
+
+  .viewGame-area2{
+    /* background-color: aqua; */
+    margin: 0;
+    width: 100%;
+    height: 15%;
+  }
+  .viewGame-btnEdit button,
+  .viewGame-btnDelete button{
+    width: 50%;
+    margin-bottom: 1em;
+  }
+
+.viewGame-btnPlay button{
+  width: 60%;
+  margin-top: 2em;
+
+}
+
+  .viewGame-area3{
+    /* background-color: #ffd700; */
+    margin: 0;
+    width: 100%;
+    height: 40%;
+   
+  }
+  .viewGame-trailer{
+    width: 100%;
+    height: 70%;
+    
+  }
+  .viewGame-trailer iframe{
+   display: block;
+   margin:  0 auto;
+    border-radius: .3em;
+  }
+}
