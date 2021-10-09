@@ -27,8 +27,8 @@
   
 }
 
-.gameList:hover .arrowRight:hover,
-.gameList:hover .arrowLeft:hover {
+.gameList:hover .arrowRight,
+.gameList:hover .arrowLeft {
   opacity:1;
 }
 
