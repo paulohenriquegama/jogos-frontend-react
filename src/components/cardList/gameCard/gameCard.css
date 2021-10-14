@@ -6,9 +6,9 @@
   margin: 5rem auto;
 } */
 .gameCard {
-  width: 25em;
+  width: 15em;
   height: 25rem;
-  background-color: aquamarine;
+  background-color: rgba(127, 255, 212, 0.616);
   display: grid;
   grid-template-rows: 1fr 3fr 1fr;
   justify-items: center;
@@ -41,4 +41,13 @@
   height: 3rem;
   display: flex;
   justify-content: space-between;
+}
+
+/* Media */
+
+@media only screen and (max-width: 519px) {
+  .gameCard{
+    min-width: 15em;
+    height: 100%;
+  }
 }

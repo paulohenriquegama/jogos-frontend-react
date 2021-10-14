@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 95%;
   height: 100vh;
   background: rgb(10,10,10);
@@ -20,3 +20,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

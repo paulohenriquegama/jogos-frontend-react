@@ -1,3 +1,28 @@
 .App{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 13% 80% 5%;
   
+}
+
+.app-header{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 3em;
+  margin-bottom: 4em;
+}
+
+.app-body{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.app-footer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

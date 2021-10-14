@@ -1,5 +1,9 @@
+/* :root{
+  --lengthList: 240 ;
+} */
 .bloco-gameList{
- 
+ width: 100%;
+ overflow: hidden;
 }
 
 .title-gameList{
@@ -8,11 +12,12 @@
 }
 
 .gameList{
+  max-width: 100%;
+  /* width: var(--lengthList * 240) ; */
   height: 25em;
   display: flex;
   align-items: center;
   transition: all ease 0.7s;
-  
 }
 .arrowRight,
 .arrowLeft {
@@ -46,4 +51,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 0 .3em .3em 0;
+}
+
+/* Media */
+
+@media only screen and (max-width: 519px) {
+  .arrowRight,
+  .arrowLeft{
+    min-width: .5em;
+    background-color: rgba(0, 0, 0, 0.13);
+  }
 }

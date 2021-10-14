@@ -43,6 +43,9 @@ export default function CreateGame(props) {
   return (
     <div>
       <form className="formGame" onSubmit={handleSubmit}>
+        <div>
+          <h2>Cadastro de Jogo</h2>
+        </div>
         <label htmlFor="title">Titulo:</label>
         <input type="text" id="title" name="title"/>
 

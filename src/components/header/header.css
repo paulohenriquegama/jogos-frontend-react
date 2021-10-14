@@ -1,3 +1,49 @@
 .header{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: .2em solid black;
+  
+}
+.header-top{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+
+.logo{
+  width: 5em;
+  color: white;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
   text-align: center;
+
+}
+
+.logo h4{
+  margin-top: -1em;
+  font-size: .7em;
+  text-align: center;
+}
+
+.header-btns{
+  display: flex;
+}
+.header-user, .header-add{
+  cursor: pointer;
+  color: white;
+}
+
+/* Midia */
+
+@media only screen and (max-width: 519px) {
+  .header-title{
+    display: none;
+  }
 }
