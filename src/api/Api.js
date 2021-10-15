@@ -1,6 +1,7 @@
 export const Api = {
   baseUrl: "http://localhost:3000",
 
+  // Endpoint Game
   readAllGameUrl: () => Api.baseUrl + "/game",
 
   readByIdGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
@@ -10,6 +11,13 @@ export const Api = {
   // Endpoint Genres
 
   readAllGenresUrl: () => Api.baseUrl + "/genre",
+
+  // Endpoint User
+  readAllUserUrl: () => Api.baseUrl + "/user",
+
+  readByIdUserUrl: (id) => `${Api.baseUrl}/user/${id}`,
+
+  createUserUrl: () => Api.baseUrl + "/user",
 
   //GET requests
   buildApiGetRequest: url => 

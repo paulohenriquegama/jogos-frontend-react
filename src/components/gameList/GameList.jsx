@@ -85,7 +85,7 @@ export default function GameList() {
           <NavigateNextIcon style={{fontSize: 80}}/>
         </div>
         {games.map((game) => (
-        <GameCard game={game}/>
+        <GameCard game={game} key={`game-${game.id}`}/>
         ))}
       </div>
     </div>

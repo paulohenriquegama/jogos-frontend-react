@@ -75,25 +75,25 @@ export default function CreateGame(props) {
           <h2>Cadastro de Jogo</h2>
         </div>
         <label htmlFor="title">Titulo:</label>
-        <input type="text" id="title" name="title" />
+        <input type="text" id="title" name="title" required/>
 
         <label htmlFor="capa">Capa:</label>
-        <input type="text" id="capa" name="capa" />
+        <input type="text" id="capa" name="capa" required/>
 
         <label htmlFor="description">Descrição:</label>
         <textarea type="text" id="description" name="description" />
 
         <label htmlFor="year">Ano:</label>
-        <input type="text" id="year" name="year" />
+        <input type="text" id="year" name="year" required/>
 
         <label htmlFor="note">Nota:</label>
-        <input type="text" id="note" name="note" />
+        <input type="text" id="note" name="note" required/>
 
         <label htmlFor="trailer">Trailer:</label>
-        <input type="text" id="trailer" name="trailer" />
+        <input type="text" id="trailer" name="trailer" required/>
 
         <label htmlFor="gameplay">Game Play:</label>
-        <input type="text" id="gameplay" name="gameplay" />
+        <input type="text" id="gameplay" name="gameplay" required/>
 
         <label htmlFor="genre">Genero:</label>
         <div className="select">
