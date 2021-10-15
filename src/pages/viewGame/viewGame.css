@@ -1,7 +1,6 @@
 .viewGame{
-  width: 100%;
+  width: 95vw;
   height: 100vh;
-  margin: 0 auto;
   background-color: rgba(65, 180, 226, 0.246);
   border-radius: .2em;
 }

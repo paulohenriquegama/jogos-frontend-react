@@ -1,7 +1,6 @@
 .viewPlay {
-  width: 100%;
+  width: 95vw;
   height: 100vh;
-  margin: 0 auto;
   background-color: rgba(65, 180, 226, 0.246);
   border-radius: 0.2em;
   padding-bottom: 1em;
@@ -52,4 +51,11 @@
   height: 25%;
   color: #ffd700;
   cursor: pointer;
+  margin-left: 1em;
+}
+
+.viewGame-description{
+  width: 90%;
+  color: white;
+  font-weight: bold;
 }
