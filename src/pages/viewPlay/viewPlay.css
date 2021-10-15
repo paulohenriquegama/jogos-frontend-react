@@ -1,0 +1,54 @@
+.viewPlay {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: rgba(65, 180, 226, 0.246);
+  border-radius: 0.2em;
+  padding-bottom: 1em;
+}
+
+.viewPlay-header {
+  width: 100%;
+}
+
+.viewPlay-title h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.viewPlay-body {
+  width: 100%;
+  height: 90%;
+  /* background-color: aquamarine; */
+}
+
+.viewPlay-favorite {
+  width: 10%;
+  /* background-color: aquamarine; */
+  margin-left: 1em;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.viewPlay-trailer {
+  width: 75%;
+  height: 80%;
+  /* background-color: aliceblue; */
+  margin: 0 auto;
+  margin-top: -1em;
+  border-radius: 0.5em;
+}
+
+.viewPlay-trailer iframe {
+  border-radius: 0.5em;
+  box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+  -webkit-box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+  -moz-box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+}
+
+.viewPlay-note {
+  width: 100%;
+  color: #ffd700;
+  cursor: pointer;
+}
