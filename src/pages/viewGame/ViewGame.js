@@ -70,6 +70,10 @@ export default function ViewGame(props) {
       );
     }
   }
+
+  const handleClick = () => {
+    props.history.push(`/game/play/${game.id}`)
+  }
  
 
   
@@ -109,7 +113,7 @@ export default function ViewGame(props) {
             <button>Excluir</button>
           </div>
           <div className="viewGame-btnPlay">
-            <button>Jogar</button>
+            <button onClick={handleClick}>Jogar</button>
           </div>
         </div>
         <div className="viewGame-area3">
