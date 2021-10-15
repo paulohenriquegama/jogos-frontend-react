@@ -1,4 +1,4 @@
-.footer{
+.footer {
   z-index: 99;
   width: 100%;
   height: 5%;
@@ -6,6 +6,13 @@
   bottom: 0;
   text-align: center;
   padding-bottom: 1em;
-  border-top: .2em solid black;
+  border-top: 0.2em solid black;
   background-color: rgba(0, 0, 0, 0.438);
+}
+
+.footer h3 {
+  /* color: rgba(13,163,175,1); */
+  color: rgba(13,163,175,1);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px rgba(13,163,175,1),
+    0 0 15px rgba(13,163,175,1), 0 0 35px rgba(13,163,175,1), 0 0 5px rgba(13,163,175,1), 0 0 70px rgba(13,163,175,1);
 }
