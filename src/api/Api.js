@@ -7,6 +7,10 @@ export const Api = {
 
   createGameUrl: () => Api.baseUrl + "/game",
 
+  // Endpoint Genres
+
+  readAllGenresUrl: () => Api.baseUrl + "/genre",
+
   //GET requests
   buildApiGetRequest: url => 
     fetch(url, {

@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   /* overflow: hidden; */
-  width: 95%;
+  width: 95vw;
   height: 100vh;
   background: rgb(10,10,10);
   background: linear-gradient(135deg, rgba(10,10,10,1) 0%, rgba(13,163,175,1) 53%, rgba(0,8,9,1) 100%);

@@ -2,7 +2,7 @@
   --lengthList: 240 ;
 } */
 .bloco-gameList{
- width: 100%;
+ max-width: 100%;
  overflow: hidden;
 }
 
@@ -12,7 +12,6 @@
 }
 
 .gameList{
-  max-width: 100%;
   /* width: var(--lengthList * 240) ; */
   height: 25em;
   display: flex;

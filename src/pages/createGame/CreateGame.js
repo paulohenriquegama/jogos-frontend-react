@@ -1,10 +1,16 @@
-import React from 'react';
-import { Api } from '../../api/Api';
-import './createGame.css';
+import React, { useEffect, useState } from 'react'
+import { Api } from '../../api/Api'
+
+import Select from 'react-select'
+
+import './createGame.css'
 
 export default function CreateGame(props) {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [genres, setGenres] = useState([])
+  const [genresIds, setGenresIds] = useState([])
+
+  const handleSubmit = async e => {
+    e.preventDefault()
     const title = e.target.title.value
     const capa = e.target.capa.value
     const description = e.target.description.value
@@ -12,7 +18,6 @@ export default function CreateGame(props) {
     const note = e.target.note.value
     const trailer = e.target.trailer.value
     const gameplay = e.target.gameplay.value
-    const genre = e.target.genre.value
 
     const playload = {
       title,
@@ -22,24 +27,47 @@ export default function CreateGame(props) {
       note,
       trailer,
       gameplay,
-      genres: [
-        {
-          name: genre,
-        },
-      ],
-    };
+      genresIds,
+    }
+    console.log("playload",playload)
+    const response = await Api.buildApiPostRequest(
+      Api.createGameUrl(),
+      playload,
+    )
 
-    const response = await Api.buildApiPostRequest(Api.createGameUrl(),playload);
-    
-    const body = await response.json();
+    const body = await response.json()
 
     if (response.status === 201) {
-      const id = body.id;
-      props.history.push(`/game/${id}`);
+      const id = body.id
+      props.history.push(`/game/view/${id}`)
     }
     console.log(response)
-  };
+  }
 
+  useEffect(() => {
+    const loadGenres = async () => {
+      const response = await Api.buildApiGetRequest(
+        Api.readAllGenresUrl(),
+        true,
+      )
+
+      const results = await response.json()
+      console.log(results)
+      setGenres(results)
+    }
+
+    loadGenres()
+  }, [])
+
+  const options = genres.map(genre => ({
+    value: genre.id,
+    label: genre.name,
+  }))
+
+  const handleGenreChange = selectedOption => {
+    setGenresIds(selectedOption.map(option => option.value))
+  }
+  console.log('genresIds', genresIds)
   return (
     <div>
       <form className="formGame" onSubmit={handleSubmit}>
@@ -47,30 +75,34 @@ export default function CreateGame(props) {
           <h2>Cadastro de Jogo</h2>
         </div>
         <label htmlFor="title">Titulo:</label>
-        <input type="text" id="title" name="title"/>
+        <input type="text" id="title" name="title" />
 
         <label htmlFor="capa">Capa:</label>
-        <input type="text" id="capa" name="capa"/>
+        <input type="text" id="capa" name="capa" />
 
         <label htmlFor="description">Descrição:</label>
-        <textarea type="text" id="description" name="description"/>
+        <textarea type="text" id="description" name="description" />
 
         <label htmlFor="year">Ano:</label>
-        <input type="text" id="year" name="year"/>
+        <input type="text" id="year" name="year" />
 
         <label htmlFor="note">Nota:</label>
-        <input type="text" id="note" name="note"/>
+        <input type="text" id="note" name="note" />
 
         <label htmlFor="trailer">Trailer:</label>
-        <input type="text" id="trailer" name="trailer"/>
+        <input type="text" id="trailer" name="trailer" />
 
         <label htmlFor="gameplay">Game Play:</label>
-        <input type="text" id="gameplay" name="gameplay"/>
+        <input type="text" id="gameplay" name="gameplay" />
 
         <label htmlFor="genre">Genero:</label>
-        <input type="text" id="genre" name="genre"/>
+        <div className="select">
+          <Select isMulti options={options} onChange={handleGenreChange} />
+        </div>
 
-        <button type="submit" class="btn">Enviar</button>
+        <button type="submit" class="btn">
+          Enviar
+        </button>
       </form>
     </div>
   )

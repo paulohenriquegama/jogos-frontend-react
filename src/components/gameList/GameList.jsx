@@ -9,6 +9,9 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 export default function GameList() {
   const [games, setGames] = useState([])
   const [scrollX,setScrollX] = useState(0);
+  const [y,setY] = useState(1);
+  
+
 
   useEffect(()=> {
     const loadGame = async () => {
@@ -22,24 +25,41 @@ export default function GameList() {
   },[])
 
   const handleArrowLeft = () =>{
-    let x = scrollX + 480;
+    let x = scrollX + 280;
+    setY(y-1);
+
     if (x>0){
       x=0;
+      setY(1);
     }
+    
     setScrollX(x);
   }
 
   const handleArrowRight = () =>{
-    let x = scrollX - 480;
+    let x = scrollX - 280;
     let totalGames = games.length * 240;
-    if (window.innerWidth >totalGames){
+    if ((window.innerWidth - (x/2)) >totalGames){
       console.log('entrou')
-      x=0;
+      x=-240;
+      setY(1)
       
-    }
-    if (window.innerWidth -70 <totalGames){
+    }else{
       console.log('entrou segundo')
-      x=-(window.innerWidth/2);
+      
+      console.log('antes y=', y);
+
+      x=- (y*240);
+      
+      console.log('depois y=', y);
+      let fim = -totalGames
+      setY(y+1);
+      if(x<= fim){
+        console.log("entrou fim",y);
+        x = fim + 250;
+        setY(games.length);
+      }
+      
     }
     setScrollX(x);
     console.log("innerWidt",window.innerWidth)
