@@ -1,0 +1,19 @@
+.deleteGame{
+  width: 30%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 10em;
+  
+}
+
+.deleteGame h2{
+  text-align: center;
+}
+.deleteGame-blocoBtn{
+  display: flex;
+  justify-content: space-around;
+}
+
+.deleteGame-btnConfirme{
+  margin-right: 2em;
+}
