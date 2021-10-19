@@ -1,0 +1,40 @@
+.viewUser{
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  
+}
+
+.viewUser-title{
+  text-align: center;
+}
+
+.viewUser-bloco-items{
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 1em;
+}
+
+.viewUser-items{
+  width: 100%;
+  height: 5%;
+  padding: 0;
+  margin-bottom: -1.8em;
+  /* background-color: rgb(50, 168, 129); */
+
+}
+
+.viewUser-profiles{
+  margin: 2em 0;
+}
+
+.viewUser-cards{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: aqua; */
+}
