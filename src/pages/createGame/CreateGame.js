@@ -64,6 +64,7 @@ export default function CreateGame(props) {
     label: genre.name,
   }))
 
+
   const handleGenreChange = selectedOption => {
     setGenresIds(selectedOption.map(option => option.value))
   }
@@ -96,11 +97,10 @@ export default function CreateGame(props) {
         <input type="text" id="gameplay" name="gameplay" required/>
 
         <label htmlFor="genre">Genero:</label>
-        <div className="select">
-          <Select isMulti options={options} onChange={handleGenreChange} />
-        </div>
+        
+          <Select isMulti options={options} onChange={handleGenreChange} className="select" />
 
-        <button type="submit" class="btn">
+        <button type="submit" class="btn-pattern">
           Enviar
         </button>
       </form>

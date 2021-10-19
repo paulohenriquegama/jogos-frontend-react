@@ -99,6 +99,10 @@
   margin-bottom: 1em;
 }
 
+.viewGame-btnDelete{
+  text-decoration: none;
+}
+
 .viewGame-btnPlay button{
   width: 100%;
   margin-top: 2em;

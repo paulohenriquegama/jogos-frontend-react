@@ -1,29 +1,92 @@
-.App{
+.App {
+  margin: 0 auto;
   width: 95vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 13% 80% 5%;
-  
 }
 
-.app-header{
+.app-header {
   width: 95vw;
   height: 100%;
   padding-bottom: 3em;
   margin-bottom: 4em;
 }
 
-.app-body{
+.app-body {
   margin-top: 1em;
   width: 100vw;
   height: 100vh;
-  
 }
 
-.app-footer{
+.app-footer {
   width: 100vw;
   /* height: 35vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn-danger {
+  background-color: rgba(0, 0, 0, 0.274);
+  border: 0.2em solid red;
+  padding: 0.5em;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+  border-radius: 0.5em;
+  transform: scale(0.95);
+}
+
+.btn-danger:hover {
+  background-color: rgba(255, 0, 0, 0.589);
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px red,
+    0 0 5px rgb(218, 42, 42), 0 0 15px rgb(218, 42, 42),
+    0 0 35px rgb(219, 44, 28), 0 0 5px rgb(218, 42, 42),
+    0 0 70px rgb(218, 42, 42);
+    cursor: pointer;
+}
+
+.btn-pattern {
+  background-color: rgba(0, 0, 0, 0.274);
+  border: 0.2em solid rgb(31, 30, 30);
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em;
+  transform: scale(0.95);
+  transition: all ease 0.5s;
+  cursor: pointer;
+
+}
+
+.btn-pattern:hover {
+  color: black;
+  border-color: white;
+  font-weight: bold;
+  transform: scale(1);
+  box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff,
+    0 0 5px rgba(13, 163, 175, 1), 0 0 15px rgba(13, 163, 175, 1),
+    0 0 35px rgba(13, 163, 175, 1), 0 0 5px rgba(13, 163, 175, 1),
+    0 0 70px rgba(13, 163, 175, 1);
+}
+
+.btn-sucess{
+  background-color: rgba(0, 0, 0, 0.274);
+  border: 0.2em solid rgb(1, 117, 30);
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em;
+  transform: scale(0.95);
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+input, textarea{
+  background-color: rgba(0, 0, 0, 0.274);
+  color: white;
+  border: none;
 }

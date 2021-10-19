@@ -8,6 +8,8 @@ export const Api = {
 
   createGameUrl: () => Api.baseUrl + "/game",
 
+  deleteGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
+
   // Endpoint Genres
 
   readAllGenresUrl: () => Api.baseUrl + "/genre",
@@ -18,6 +20,20 @@ export const Api = {
   readByIdUserUrl: (id) => `${Api.baseUrl}/user/${id}`,
 
   createUserUrl: () => Api.baseUrl + "/user",
+
+  // Endpoint Profile
+  readAllProfileUrl: () => Api.baseUrl + "/profile",
+
+  readByIdProfileUrl: (id) => `${Api.baseUrl}/profile/${id}`,
+
+  createProfileUrl: () => Api.baseUrl + "/profile",
+
+  deleteProfileUrl: (id) => `${Api.baseUrl}/profile/${id}`,
+
+
+
+  // Auth Header
+ 
 
   //GET requests
   buildApiGetRequest: url => 
@@ -32,5 +48,11 @@ export const Api = {
         "content-type": "application/json"
       }),
       body: JSON.stringify(body),
-    })
+    }),
+
+  buildApiDeleteRequest: (url, auth) =>
+    fetch(url, {
+        method: "DELETE",
+        // headers: auth ? new Headers(Api.authHeader()) : undefined,
+    }),
 }

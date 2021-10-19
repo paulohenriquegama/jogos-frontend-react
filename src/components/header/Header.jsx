@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './header.css'
 import { Link } from 'react-router-dom';
 
@@ -6,9 +6,17 @@ import { Link } from 'react-router-dom';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import ModalAdd from './ModalAdd';
 // import FadeMenu from './FadeMenu';
 
 export default function Header() {
+  const [showAdd, setShowAdd] = useState(false);
+
+  function handleClick() {
+    setShowAdd(!showAdd);
+  }
+  console.log("add",showAdd)
+
   return (
     <div className="header">
       <div className="header-top">
@@ -22,11 +30,11 @@ export default function Header() {
           <h1>Biblioteca de Jogos</h1>
         </div>
         <div className="header-btns">
-          <Link to="/game/create">
-            <div className="header-add">
-            <AddCircleIcon style={{fontSize: 60}}/>
+            <div className="header-add" onClick={handleClick}>
+                <AddCircleIcon style={{fontSize: 60}}/>
+                {showAdd ? <ModalAdd/> : null}
             </div>
-          </Link>
+
           <div className="header-user">
             
               <PersonOutlineIcon style={{fontSize: 60}}/>

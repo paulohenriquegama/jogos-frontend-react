@@ -7,6 +7,7 @@ import StarIcon from '@material-ui/icons/Star';
 
 //CSS
 import './viewGame.css'
+import { Link } from 'react-router-dom';
 
 export default function ViewGame(props) {
   const id = props.match.params.id
@@ -27,7 +28,7 @@ export default function ViewGame(props) {
   }
 
   function qtdStar(note) {
-    console.log(note)
+
     if (note === 10) {
       return (
         <div>
@@ -107,13 +108,15 @@ export default function ViewGame(props) {
         </div>
         <div className="viewGame-area2">
           <div className="viewGame-btnEdit">
-            <button>Editar</button>
+            <button className="btn-pattern">Editar</button>
           </div>
-          <div className="viewGame-btnDelete">
-            <button>Excluir</button>
-          </div>
+          
+            <Link to={`/game/delete/${game.id}`}className="viewGame-btnDelete">
+            <button className="btn-danger">Excluir</button>
+            </Link>
+          
           <div className="viewGame-btnPlay">
-            <button onClick={handleClick}>Jogar</button>
+            <button className="btn-pattern"onClick={handleClick}>Jogar</button>
           </div>
         </div>
         <div className="viewGame-area3">
