@@ -66,7 +66,7 @@ export default function ViewUser(props) {
 
         <div className="viewUser-cards">
           {profiles.map(profile => (
-            <ProfileCard profile={profile} key={`profile-${profile.id}`} />
+            <ProfileCard profile={profile} key={`profile-${profile.id}`} userId={user.id} />
           ))}
         </div>
       </div>

@@ -8,6 +8,9 @@ export const Api = {
 
   createGameUrl: () => Api.baseUrl + "/game",
 
+  updateGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
+
+
   deleteGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
 
   // Endpoint Genres
@@ -27,6 +30,8 @@ export const Api = {
   readByIdProfileUrl: (id) => `${Api.baseUrl}/profile/${id}`,
 
   createProfileUrl: () => Api.baseUrl + "/profile",
+
+  updateProfileUrl: (id) => `${Api.baseUrl}/profile/${id}`,
 
   deleteProfileUrl: (id) => `${Api.baseUrl}/profile/${id}`,
 
@@ -48,6 +53,16 @@ export const Api = {
         "content-type": "application/json"
       }),
       body: JSON.stringify(body),
+    }),
+
+    buildApiPatchRequest: (url, body, auth) =>
+    fetch(url, {
+        method: "PATCH",
+        headers: new Headers({
+            "Content-type": "application/json",
+            // ...(auth ? Api.authHeader() : {}),
+        }),
+        body: JSON.stringify(body),
     }),
 
   buildApiDeleteRequest: (url, auth) =>

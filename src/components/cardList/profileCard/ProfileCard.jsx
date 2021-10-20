@@ -6,7 +6,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import './profileCard.css'
 import { Link } from 'react-router-dom';
 
-export default function ProfileCard({profile}) {
+export default function ProfileCard({profile, userId}) {
   
   console.log('entrou profileCard')
   return (
@@ -18,12 +18,14 @@ export default function ProfileCard({profile}) {
         <img src={profile.image} alt={profile.title}/>
       </div>
       <div className="profileCard-btn">
-        <div className="profileCard-btnAdd">
+        
+        <Link to={`/profile/update/${profile.id}`} className="profileCard-btnAdd">
           <EditIcon/>
-        </div>
-            <Link to={`/profile/delete/${profile.id}`}className="profileCard-btnExcluir">
-              <DeleteForeverIcon/>
-            </Link> 
+        </Link> 
+        
+        <Link to={`/profile/delete/${profile.id}`}className="profileCard-btnExcluir">
+          <DeleteForeverIcon/>
+        </Link> 
 
       </div>
     </div>

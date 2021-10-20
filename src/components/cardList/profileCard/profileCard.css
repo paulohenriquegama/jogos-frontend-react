@@ -40,6 +40,6 @@
   align-items: center;
 }
 
-.profileCard-btnExcluir{
+.profileCard-btnExcluir, .profileCard-btnAdd{
   color: white;
 }

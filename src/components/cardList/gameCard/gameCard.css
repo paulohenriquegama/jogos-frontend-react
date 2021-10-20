@@ -41,6 +41,12 @@
   height: 3rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.gameCard-note{
+  color: #ffd700;
+  cursor: pointer;
 }
 
 /* Media */

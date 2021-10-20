@@ -2,12 +2,12 @@
   background-color: rgba(0, 0, 0, 0.486);
   position: absolute;
   z-index: 99;
-  width: 10em;
+  width: 15em;
   height: 8em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   
 }
 
@@ -15,4 +15,9 @@
   text-decoration: none;
   color: white;
   margin-bottom: -1em;
+  margin-left: .5em;
+}
+
+.modalAdd-items:hover{
+  text-decoration: underline;
 }

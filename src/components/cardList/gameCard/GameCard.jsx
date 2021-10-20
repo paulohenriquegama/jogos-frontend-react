@@ -67,7 +67,7 @@ export const GameCard = ({game}) => {
         <div className="year">
           {game.year}
         </div>
-        <div>
+        <div className="gameCard-note">
           <h3>{qtdStar(+game.note)}</h3>
         </div>
       </div>

@@ -10,6 +10,8 @@ import ViewUser from '../pages/viewUser/ViewUser'
 import CreateProfile from '../pages/createProfile/CreateProfile'
 import DeleteGame from '../pages/deleteGame/DeleteGame'
 import DeleteProfile from '../pages/deleteProfile/DeleteProfile'
+import UpdateProfile from '../pages/updateProfile/UpdateProfile'
+import UpdateGame from '../pages/updateGame/UpdateGame'
 
 function Routes() {
   return (
@@ -21,9 +23,11 @@ function Routes() {
         <Route path="/game/create" component={CreateGame} />
         <Route path="/game/view/:id" component={ViewGame} />
         <Route path="/game/play/:id" component={ViewPlay} />
+        <Route path="/game/update/:id" component={UpdateGame} />
         <Route path="/game/delete/:id" component={DeleteGame} />
         <Route path="/profile/create" component={CreateProfile} />
         <Route path="/profile/delete/:id" component={DeleteProfile} />
+        <Route path="/profile/update/:id" component={UpdateProfile} />
 
         <Route path="*" component={NotFound} />
       </Switch>
