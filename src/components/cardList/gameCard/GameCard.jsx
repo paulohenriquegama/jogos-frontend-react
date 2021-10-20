@@ -57,15 +57,15 @@ export const GameCard = ({game}) => {
 
   return (
     <div className="gameCard" onClick={handleClick}>
-      <div>
-        {game.title}
+      <div className="gameCard-title">
+        <h3>{game.title}</h3>
       </div>
       <div className="gameCard-capa">
         <img src={game.capa} alt={game.title}/>
       </div>
       <div className="footerCardGame">
-        <div className="year">
-          {game.year}
+        <div className="gameCard-year">
+          <h3>{game.year}</h3>
         </div>
         <div className="gameCard-note">
           <h3>{qtdStar(+game.note)}</h3>
