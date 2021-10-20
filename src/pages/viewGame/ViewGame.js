@@ -12,19 +12,78 @@ import { Link } from 'react-router-dom';
 export default function ViewGame(props) {
   const id = props.match.params.id
   const [game, setGame] = useState(undefined)
-  const [favorite, setFavorite] = useState(false)
-
+  const [favorite, setFavorite] = useState(null)
+  
   useEffect(() => {
     const loadGame = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id))
-      const results = await response.json()
-      setGame(results)
-    }
-    loadGame()
-  }, [])
+      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id));
+      const results = await response.json();
+      setGame(results);
+    };
+    loadGame();
+  },[id]);
 
-  const handleFavorite = () => {
+  useEffect(() => {
+    if(game){  
+      console.log("favorite dentro efect antes do set", favorite)
+      let x = game.favorite
+      setFavorite(x)
+      console.log("favorite dentro efect=", favorite)
+    }
+  },[game]);
+
+  if(!game){
+    return <h3>Loading..</h3>;
+  };
+
+    console.log("favorite 1=", favorite)
+  // console.log("game favorite", game.favorite)
+
+  async function handleFavorite() {
     setFavorite(!favorite);
+    console.log("favorite dentro handle", favorite);
+    const title = game.title;
+    const capa = game.capa;
+    const description = game.description;
+    const year = game.year;
+    const note = game.note;
+    const trailer = game.trailer;
+    const gameplay = game.gameplay;
+
+    // Constrói um payload com esses dados
+    const payload = {
+      title,
+      capa,
+      description,
+      year,
+      note,
+      trailer,
+      gameplay,
+      favorite,
+    };
+    console.log("O playload é", payload);
+    // Faz uma requisição no backend
+    const response = await Api.buildApiPatchRequest(
+      Api.updateGameUrl(id),
+      payload,
+      true
+    );
+
+    const body = await response.json();
+    console.log("body é", body);
+
+    if (response.status === 200) {
+      // Product updated successfully
+      const id = body.id;
+
+      props.history.push(`/game/view/${id}`);
+    } else {
+      // Error
+      console.log('deu erro',favorite)
+      setFavorite(!favorite);
+      console.log('depois do erro',favorite)
+
+    }
   }
 
   function qtdStar(note) {
@@ -76,12 +135,6 @@ export default function ViewGame(props) {
     props.history.push(`/game/play/${game.id}`)
   }
  
-
-  
-  if(!game){
-    return <h3>Loading..</h3>;
-  }
-
   return (
     <div className="viewGame">
       <section className="viewGame-header">
@@ -92,7 +145,7 @@ export default function ViewGame(props) {
       <section className="viewGame-body">        
         <div className="viewGame-area1">
           <div className="viewGame-img">
-            <div className="viewGame-favorite" onClick={handleFavorite}>
+            <div className="viewGame-favorite" onClick={() => handleFavorite()}>
               {favorite ? <FavoriteIcon fontSize="large" /> : <FavoriteBorderIcon fontSize="large"/> }
             </div>
             <img src={game.capa}/>
