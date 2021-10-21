@@ -16,7 +16,7 @@ export default function ViewUser(props) {
       if(user.length > 0) {
         setUser(results)
       }
-      console.log(results)
+      console.log("results",results)
     }
     loadUser()
   }, [id])

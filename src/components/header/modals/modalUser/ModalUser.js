@@ -32,7 +32,7 @@ export default function ModalAdd({isLogged}) {
           <h4>Logout</h4>
         </Link>
       )}
-      <Link to={`/user/view/${userCurrent}`} className="modalAdd-items">
+      <Link to={`/user/${userCurrent}`} className="modalAdd-items">
         <h4>Meu Usuario</h4>
       </Link>
     </div>

@@ -24,7 +24,7 @@ function Routes() {
         <Route path="/login" component={Login} />
         <GuardedRoute path="/logout" component={Logout} />
         <Route path="/user/create" component={CreateUser} />
-        <GuardedRoute path="/user/view/:id" component={ViewUser} />
+        <GuardedRoute path="/user/:id" component={ViewUser} />
         <GuardedRoute path="/game/create" component={CreateGame} />
         <GuardedRoute path="/game/view/:id" component={ViewGame} />
         <GuardedRoute path="/game/play/:id" component={ViewPlay} />

@@ -29,7 +29,7 @@ export default function CreateGame(props) {
 
     if (response.status === 201) {
       const id = body.id
-      props.history.push(`/user/view/${id}`)
+      props.history.push(`/user/${id}`)
     }
     console.log(response)
   }
