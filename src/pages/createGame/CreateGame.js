@@ -18,6 +18,7 @@ export default function CreateGame(props) {
     const note = e.target.note.value
     const trailer = e.target.trailer.value
     const gameplay = e.target.gameplay.value
+    const favorite = false
 
     const playload = {
       title,
@@ -27,12 +28,14 @@ export default function CreateGame(props) {
       note,
       trailer,
       gameplay,
+      favorite,
       genresIds,
     }
     console.log("playload",playload)
     const response = await Api.buildApiPostRequest(
       Api.createGameUrl(),
       playload,
+      true
     )
 
     const body = await response.json()
@@ -52,10 +55,7 @@ export default function CreateGame(props) {
       )
 
       const results = await response.json()
-      console.log(results)
-      if(genres.length>0){
         setGenres(results)
-      }
     }
 
     loadGenres()

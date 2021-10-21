@@ -26,6 +26,8 @@ export const Api = {
 
   readAllGenresUrl: () => Api.baseUrl + "/genre",
 
+  createGenreUrl: () => Api.baseUrl + "/genre",
+
   // Endpoint User
   readAllUserUrl: () => Api.baseUrl + "/user",
 
