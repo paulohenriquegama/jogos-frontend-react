@@ -18,7 +18,9 @@ export default function GameList() {
       const response = await Api.buildApiGetRequest(Api.readAllGameUrl());
 
       const results = await response.json();
-      setGames(results);
+      if(results.length>0){
+        setGames(results);
+      }
     }
     loadGame();
     // document.documentElement.style.setProperty('--lengthList', games.length);
@@ -84,7 +86,7 @@ export default function GameList() {
         <div className="arrowRight" onClick={handleArrowRight}>
           <NavigateNextIcon style={{fontSize: 80}}/>
         </div>
-        {games.map((game) => (
+        {games?.map((game) => (
         <GameCard game={game} key={`game-${game.id}`}/>
         ))}
       </div>
