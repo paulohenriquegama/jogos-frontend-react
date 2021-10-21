@@ -2,7 +2,7 @@ import { JwtHandler } from "../jwt-handler/JwtHandler";
 
 export const Api = {
   // baseUrl: "http://localhost:3000",
-  baseUrl: "https://bibliotecadejogos-nestejs.herokuapp.com/",
+  baseUrl: "https://bibliotecadejogos-nestejs.herokuapp.com",
 
   // Endpoint - Login
 

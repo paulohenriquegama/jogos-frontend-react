@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Api } from '../../api/Api'
 import ProfileCard from '../../components/cardList/profileCard/ProfileCard'
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 import './viewUser.css'
 
@@ -18,7 +17,7 @@ export default function ViewUser(props) {
       console.log(results)
     }
     loadUser()
-  }, [])
+  }, [id])
 
   useEffect(() => {
     const loadProfiles = async () => {

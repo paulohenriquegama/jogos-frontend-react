@@ -39,8 +39,6 @@ export default function CreateProfile(props) {
       true
     )
 
-    const body = await response.json()
-
     if (response.status === 201) {
       
       props.history.push(`/user/view/${userCurrent}`)

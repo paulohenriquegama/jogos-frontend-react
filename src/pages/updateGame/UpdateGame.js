@@ -3,7 +3,7 @@ import { Api } from '../../api/Api'
 
 import Select from 'react-select'
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './updateGame.css'

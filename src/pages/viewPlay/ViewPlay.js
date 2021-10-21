@@ -22,7 +22,7 @@ export default function ViewGame(props) {
       setGame(results)
     }
     loadGame()
-  }, [])
+  }, [id])
 
   const handleFavorite = () => {
     setFavorite(!favorite)
