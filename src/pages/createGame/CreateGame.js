@@ -59,7 +59,7 @@ export default function CreateGame(props) {
     }
 
     loadGenres()
-  }, [])
+  }, [genres.length])
 
   const options = genres.map(genre => ({
     value: genre.id,

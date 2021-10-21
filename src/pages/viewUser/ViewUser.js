@@ -13,7 +13,9 @@ export default function ViewUser(props) {
     const loadUser = async () => {
       const response = await Api.buildApiGetRequest(Api.readByIdUserUrl(id),true)
       const results = await response.json()
-      setUser(results)
+      if(user.length > 0) {
+        setUser(results)
+      }
       console.log(results)
     }
     loadUser()
@@ -23,8 +25,10 @@ export default function ViewUser(props) {
     const loadProfiles = async () => {
       const response = await Api.buildApiGetRequest(Api.readAllProfileUrl(),true)
       const results = await response.json()
-      setProfiles(results)
-      console.log('Profiles', results)
+      if(profiles.length > 0) {
+        setProfiles(results)
+      }
+      // console.log('Profiles', results)
     }
     loadProfiles()
   }, [])
@@ -64,8 +68,8 @@ export default function ViewUser(props) {
         </div>
 
         <div className="viewUser-cards">
-          {profiles.map(profile => (
-            <ProfileCard profile={profile} key={`profile-${profile.id}`} userId={user.id} />
+          {profiles?.map((profile,i) => (
+            <ProfileCard profile={profile} key={`profile-${i}`} userId={user.id} />
           ))}
         </div>
       </div>
