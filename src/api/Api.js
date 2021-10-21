@@ -1,8 +1,16 @@
+import { JwtHandler } from "../jwt-handler/JwtHandler";
+
 export const Api = {
   baseUrl: "http://localhost:3000",
 
+  // Endpoint - Login
+
+  loginUrl: () => Api.baseUrl + "/login",
+
   // Endpoint Game
   readAllGameUrl: () => Api.baseUrl + "/game",
+
+  readCurrentUser: () => Api.baseUrl + "/game/usercurrent",
 
   readByIdGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
 
@@ -38,19 +46,23 @@ export const Api = {
 
 
   // Auth Header
- 
+  authHeader: () => ({
+    Authorization: "Bearer " + JwtHandler.getJwt(),
+  }),
 
   //GET requests
-  buildApiGetRequest: url => 
+  buildApiGetRequest:( url, auth) => 
     fetch(url, {
       method: "GET",
+      headers: auth ? new Headers(Api.authHeader()) : undefined,
     }),
 
-  buildApiPostRequest: (url, body) => 
+  buildApiPostRequest: (url, body, auth) => 
     fetch(url, {
       method: "POST",
       headers: new Headers( {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        ...(auth ? Api.authHeader() : {}),
       }),
       body: JSON.stringify(body),
     }),
@@ -60,7 +72,7 @@ export const Api = {
         method: "PATCH",
         headers: new Headers({
             "Content-type": "application/json",
-            // ...(auth ? Api.authHeader() : {}),
+            ...(auth ? Api.authHeader() : {}),
         }),
         body: JSON.stringify(body),
     }),
@@ -68,6 +80,6 @@ export const Api = {
   buildApiDeleteRequest: (url, auth) =>
     fetch(url, {
         method: "DELETE",
-        // headers: auth ? new Headers(Api.authHeader()) : undefined,
+        headers: auth ? new Headers(Api.authHeader()) : undefined,
     }),
 }

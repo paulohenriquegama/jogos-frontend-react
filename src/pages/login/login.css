@@ -1,0 +1,62 @@
+.formLogin{
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 1em;
+  background-color: rgba(12, 12, 12, 0.246);
+  align-self: center;
+  /* align-items: center; */
+  border: .2em solid rgba(0, 0, 0, 0.685);
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+
+  border-radius: 0.5em;
+  box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+  -webkit-box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+  -moz-box-shadow: -1px 1px 13px 6px rgba(216, 198, 198, 0.46);
+}
+
+.formLogin-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.formLogin-items{
+  width: 100%;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.formLogin-register{
+  color: rgba(13,163,175,1);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px rgba(13,163,175,1),
+    0 0 15px rgba(13,163,175,1), 0 0 35px rgba(13,163,175,1), 0 0 5px rgba(13,163,175,1), 0 0 70px rgba(13,163,175,1);
+}
+
+.formLogin-linkRegister{
+  text-decoration: none;
+  color: rgb(12, 11, 11);
+  transition: all ease 0.5s;
+}
+
+.formLogin-linkRegister h3{
+  transform: scale(0.95);
+}
+
+.formLogin-linkRegister h3:hover{
+  transform: scale(1.1);
+  color: rgb(25, 137, 182);
+}
+
+/* Midia */
+
+@media only screen and (max-width: 519px) {
+  .formLogin-footer{
+    flex-direction: column;
+  }
+}

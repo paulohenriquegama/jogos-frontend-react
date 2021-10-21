@@ -16,7 +16,7 @@ export default function ViewGame(props) {
 
   useEffect(() => {
     const loadGame = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id))
+      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id),true)
       const results = await response.json()
       setGame(results)
     }

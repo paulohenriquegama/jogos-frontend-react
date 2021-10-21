@@ -22,14 +22,14 @@ export default function ViewUser(props) {
 
   useEffect(() => {
     const loadProfiles = async () => {
-      const response = await Api.buildApiGetRequest(Api.readAllProfileUrl())
+      const response = await Api.buildApiGetRequest(Api.readAllProfileUrl(),true)
       const results = await response.json()
       setProfiles(results)
       console.log('Profiles', results)
     }
     loadProfiles()
   }, [])
-
+  
   return (
     <div className="viewUser">
       <div className="viewUser-title">

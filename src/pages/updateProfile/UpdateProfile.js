@@ -39,9 +39,8 @@ export default function CreateProfile(props) {
     const response = await Api.buildApiPatchRequest(
       Api.updateProfileUrl(id),
       playload,
+      true
     )
-
-    const body = await response.json()
 
     if (response.status === 200) {
       

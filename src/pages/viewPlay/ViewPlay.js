@@ -14,7 +14,10 @@ export default function ViewGame(props) {
 
   useEffect(() => {
     const loadGame = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id))
+      const response = await Api.buildApiGetRequest(
+        Api.readByIdGameUrl(id),
+        true,
+      )
       const results = await response.json()
       setGame(results)
     }
@@ -30,20 +33,20 @@ export default function ViewGame(props) {
     if (note === 10) {
       return (
         <div>
-          <StarIcon style={{fontSize: 60}} />
-          <StarIcon style={{fontSize: 60}} />
-          <StarIcon style={{fontSize: 60}} />
-          <StarIcon style={{fontSize: 60}} />
-          <StarIcon style={{fontSize: 60}} />
+          <StarIcon style={{ fontSize: 60 }} />
+          <StarIcon style={{ fontSize: 60 }} />
+          <StarIcon style={{ fontSize: 60 }} />
+          <StarIcon style={{ fontSize: 60 }} />
+          <StarIcon style={{ fontSize: 60 }} />
         </div>
       )
     } else if (note >= 8) {
       return (
         <div>
-          <StarIcon style={{fontSize: 70}} />
-          <StarIcon style={{fontSize: 70}} />
-          <StarIcon style={{fontSize: 70}} />
-          <StarIcon style={{fontSize: 70}} />
+          <StarIcon style={{ fontSize: 70 }} />
+          <StarIcon style={{ fontSize: 70 }} />
+          <StarIcon style={{ fontSize: 70 }} />
+          <StarIcon style={{ fontSize: 70 }} />
         </div>
       )
     } else if (note > 6) {
@@ -82,26 +85,26 @@ export default function ViewGame(props) {
         </div>
       </section>
       <section className="viewPlay-body">
-          <div className="viewPlay-favorite" onClick={handleFavorite}>
-            {favorite ? (
-              <FavoriteIcon style={{fontSize: 65}} />
-            ) : (
-              <FavoriteBorderIcon style={{fontSize: 65}} />
-            )}
-          </div>
-          <div className="viewPlay-trailer">
-            <iframe
-              width="100%"
-              height="100%"
-              src={`${game.gameplay.replace('watch?v=', 'embed/')}?autoplay=1`}
-              frameborder="0"
-              allow="accelerometer;"
-              allowfullscreen
-            />
-          </div>
-          <div className="viewPlay-note">
-              <h3>{qtdStar(+game.note)}</h3>
-          </div>
+        <div className="viewPlay-favorite" onClick={handleFavorite}>
+          {favorite ? (
+            <FavoriteIcon style={{ fontSize: 65 }} />
+          ) : (
+            <FavoriteBorderIcon style={{ fontSize: 65 }} />
+          )}
+        </div>
+        <div className="viewPlay-trailer">
+          <iframe
+            width="100%"
+            height="100%"
+            src={`${game.gameplay.replace('watch?v=', 'embed/')}?autoplay=1`}
+            frameborder="0"
+            allow="accelerometer;"
+            allowfullscreen
+          />
+        </div>
+        <div className="viewPlay-note">
+          <h3>{qtdStar(+game.note)}</h3>
+        </div>
       </section>
     </div>
   )

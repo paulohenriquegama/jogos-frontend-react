@@ -55,7 +55,7 @@ export default function CreateGame(props) {
         <label htmlFor="cpf">Cpf:</label>
         <input type="text" id="cpf" name="cpf" />
 
-        <button type="submit" class="btn">
+        <button type="submit" class="btn-pattern">
           Enviar
         </button>
       </form>
