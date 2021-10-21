@@ -7,8 +7,17 @@
 .viewGame-title {
   width: 100%;
   display: flex;
+  font-size: 1.5em;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.794), rgb(186, 243, 246), rgb(149, 251, 251));
+  color: rgb(5, 5, 5);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* Adicionado: */
+  -webkit-text-fill-color: transparent;
+
 }
 .viewGame-body{
   width: 100%;

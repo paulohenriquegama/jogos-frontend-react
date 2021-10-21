@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
 .viewUser{
   width: 80%;
   height: 80%;
@@ -7,6 +9,8 @@
 
 .viewUser-title{
   text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
 .viewUser-bloco-items{
@@ -16,25 +20,40 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-bottom: 1em;
+  /* margin-bottom: .5em; */
+}
+
+.viewUser-items-label{
+  color: white;
+  margin-bottom: -1.5em;
+  margin-top: -1em;
 }
 
 .viewUser-items{
   width: 100%;
   height: 5%;
   padding: 0;
-  margin-bottom: -1.8em;
-  /* background-color: rgb(50, 168, 129); */
+  font-family: 'Calligraffitti', cursive;
+  font-size: 1.2em;
 
+  background-image: linear-gradient(to bottom, rgb(8, 8, 8), rgb(23, 216, 223), rgb(40, 116, 116));
+  color: rgb(34, 32, 32);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* Adicionado: */
+  -webkit-text-fill-color: transparent;
 }
 
 .viewUser-profiles{
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 .viewUser-cards{
   width: 100%;
+  height: 20vh;
   display: flex;
   flex-wrap: wrap;
   /* background-color: aqua; */
+  
 }
