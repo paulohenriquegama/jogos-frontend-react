@@ -13,10 +13,7 @@ export default function ViewUser(props) {
     const loadUser = async () => {
       const response = await Api.buildApiGetRequest(Api.readByIdUserUrl(id),true)
       const results = await response.json()
-      if(user.length > 0) {
         setUser(results)
-      }
-      console.log("results",results)
     }
     loadUser()
   }, [id])
@@ -25,14 +22,12 @@ export default function ViewUser(props) {
     const loadProfiles = async () => {
       const response = await Api.buildApiGetRequest(Api.readAllProfileUrl(),true)
       const results = await response.json()
-      if(profiles.length > 0) {
         setProfiles(results)
-      }
-      // console.log('Profiles', results)
     }
     loadProfiles()
   }, [])
 
+  console.log('User', user)
   return (
     <div className="viewUser">
       <div className="viewUser-title">
