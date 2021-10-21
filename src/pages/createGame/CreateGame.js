@@ -53,7 +53,9 @@ export default function CreateGame(props) {
 
       const results = await response.json()
       console.log(results)
-      setGenres(results)
+      if(genres.length>0){
+        setGenres(results)
+      }
     }
 
     loadGenres()
