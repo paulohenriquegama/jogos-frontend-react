@@ -9,20 +9,20 @@ export default function CreateGame(props) {
     const name = e.target.name.value
     const surname = e.target.surname.value
     const email = e.target.email.value
-    const passwords = e.target.password.value
+    const password = e.target.password.value
     const cpf = e.target.cpf.value
 
     const playload = {
       name,
       surname,
       email,
-      passwords,
+      password,
       cpf,
     }
-    console.log("playload",playload)
     const response = await Api.buildApiPostRequest(
       Api.createUserUrl(),
       playload,
+      true
     )
 
     const body = await response.json()
