@@ -12,7 +12,7 @@ export default function ViewUser(props) {
 
   useEffect(() => {
     const loadUser = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdUserUrl(id))
+      const response = await Api.buildApiGetRequest(Api.readByIdUserUrl(id),true)
       const results = await response.json()
       setUser(results)
       console.log(results)
@@ -29,14 +29,14 @@ export default function ViewUser(props) {
     }
     loadProfiles()
   }, [])
-  
+
   return (
     <div className="viewUser">
       <div className="viewUser-title">
         <h2>{user.name}</h2>
       </div>
       <div className="viewUser-bloco-items">
-        <div className="viewUser-items">
+        <div className="viewUser-items-label">
           <h3>Sobrenome:</h3>
         </div>
         <div className="viewUser-items">
@@ -44,7 +44,7 @@ export default function ViewUser(props) {
         </div>
       </div>
       <div className="viewUser-bloco-items">
-        <div className="viewUser-items">
+        <div className="viewUser-items-label">
           <h3>Email:</h3>
         </div>
         <div className="viewUser-items">
@@ -52,7 +52,7 @@ export default function ViewUser(props) {
         </div>
       </div>
       <div className="viewUser-bloco-items">
-        <div className="viewUser-items">
+        <div className="viewUser-items-label">
           <h3>Cpf:</h3>
         </div>
         <div className="viewUser-items">

@@ -23,7 +23,7 @@ export default function ModalAdd({isLogged}) {
   }
 
   return (
-    <div className="modalAdd">
+    <div className="modalUser">
       {!isLogged ? (
         <Link to="/login" className="modalAdd-items">
               <h4>Login</h4>

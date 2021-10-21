@@ -74,6 +74,7 @@ export default function UpdateGame(props) {
     const response = await Api.buildApiPatchRequest(
       Api.updateGameUrl(id),
       playload,
+      true
     )
 
     const body = await response.json()
