@@ -5,6 +5,7 @@ import ProfileCard from '../../components/cardList/profileCard/ProfileCard'
 import './viewUser.css'
 
 export default function ViewUser(props) {
+ 
   const id = props.match.params.id
   const [user, setUser] = useState([])
   const [profiles, setProfiles] = useState([])
@@ -16,7 +17,7 @@ export default function ViewUser(props) {
         setUser(results)
     }
     loadUser()
-  }, [id])
+  },[])
 
   useEffect(() => {
     const loadProfiles = async () => {
@@ -25,8 +26,9 @@ export default function ViewUser(props) {
         setProfiles(results)
     }
     loadProfiles()
-  }, [])
-
+  }, []);
+  
+  console.log("props viewUser", props)
   console.log('User', user)
   return (
     <div className="viewUser">

@@ -16,6 +16,8 @@ export default function CreateProfile(props) {
     loadUser()
   }, [])
 
+  console.log("userCurrent",userCurrent)
+
   if (!userCurrent) {
     return <div>Loading...</div>;
   }
@@ -25,7 +27,6 @@ export default function CreateProfile(props) {
     const title = e.target.title.value
     const image = e.target.image.value
     const userId = +userCurrent
-
 
     const playload = {
       title,
@@ -39,9 +40,8 @@ export default function CreateProfile(props) {
       true
     )
 
-    if (response.status === 201) {
-      
-      props.history.push(`/user/view/${userCurrent}`)
+    if (response.status === 201) {    
+      props.history.push(`/user/${userCurrent}`)
     }
     console.log(response)
   }
