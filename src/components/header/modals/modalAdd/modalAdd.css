@@ -3,12 +3,12 @@
   position: absolute;
   z-index: 99;
   width: 15em;
-  height: 8em;
+  height: 10em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  
+  margin-left: -1em;
 }
 
 .modalAdd-items{

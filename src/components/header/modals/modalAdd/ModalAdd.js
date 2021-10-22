@@ -12,6 +12,9 @@ export default function ModalAdd() {
         <Link to="/profile/create" className="modalAdd-items">
           <h4>Adicionar Perfil</h4>
         </Link>
+        <Link to="/genre/create" className="modalAdd-items">
+          <h4>Adicionar Gênero</h4>
+        </Link>
     </div>
   )
 }
