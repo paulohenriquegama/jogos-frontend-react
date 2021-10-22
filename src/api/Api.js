@@ -11,6 +11,8 @@ export const Api = {
   // Endpoint Game
   readAllGameUrl: () => Api.baseUrl + "/game",
 
+  readCurrentUser: () => Api.baseUrl + "/game/usercurrent",
+
   readByIdGameUrl: (id) => `${Api.baseUrl}/game/${id}`,
 
   createGameUrl: () => Api.baseUrl + "/game",
@@ -28,8 +30,6 @@ export const Api = {
 
   // Endpoint User
   readAllUserUrl: () => Api.baseUrl + "/user",
-
-  readCurrentUser: () => Api.baseUrl + "/user/usercurrent",
 
   readByIdUserUrl: (id) => `${Api.baseUrl}/user/${id}`,
 
