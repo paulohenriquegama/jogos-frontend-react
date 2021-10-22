@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Api } from '../../api/Api'
 
 import './deleteProfile.css'
 
 export default function DeleteProfile(props) {
   const id = props.match.params.id
+  console.log("props deleteProfile", props)
+
+  const [userCurrent, setUserCurrent] = useState("")
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const response = await Api.buildApiGetRequest(Api.readCurrentUser(),true)
+      const results = await response.json()
+      setUserCurrent(results.id)
+    }
+    loadUser()
+  }, [])
+
+  console.log("userCurrent deleteProfile", userCurrent)
 
   const handleDelete = async event => {
     const response = await Api.buildApiDeleteRequest(
@@ -13,7 +27,7 @@ export default function DeleteProfile(props) {
     )
 
     if (response.status === 204) {
-      props.history.push(`/user/view/${id}`)
+      props.history.push(`/user/${userCurrent}`)
     } else {
       // Error
     }

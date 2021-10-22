@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Api } from '../../api/Api'
-import { getYear } from 'date-fns'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import StarIcon from '@material-ui/icons/Star'
@@ -158,7 +157,7 @@ export default function ViewGame(props) {
               <h3>{qtdStar(+game.note)}</h3>
             </div>
             <div className="viewGame-year">
-              <h3>{getYear(new Date(game.year))}</h3>
+              <h3>{game.year}</h3>
             </div>
           </div>
         </div>

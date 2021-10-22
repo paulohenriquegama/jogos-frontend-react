@@ -15,6 +15,7 @@ import UpdateGame from '../pages/updateGame/UpdateGame'
 import Login from '../pages/login/Login'
 import GuardedRoute from '../components/guardedRoute/GuardedRoute'
 import Logout from '../pages/logout/Logout'
+import CreateGenre from '../pages/createGenre/CreateGenre'
 
 function Routes() {
   return (
@@ -33,6 +34,7 @@ function Routes() {
         <GuardedRoute path="/profile/create" component={CreateProfile} />
         <GuardedRoute path="/profile/delete/:id" component={DeleteProfile} />
         <GuardedRoute path="/profile/update/:id" component={UpdateProfile} />
+        <GuardedRoute path="/genre/create" component={CreateGenre} />
 
         <Route path="*" component={NotFound} />
       </Switch>
