@@ -49,7 +49,6 @@ export default function UpdateUser(props) {
       const id = body.id
       props.history.push(`/user/${id}`)
     }
-    console.log(response)
   }
 
   return (

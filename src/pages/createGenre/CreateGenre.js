@@ -3,26 +3,22 @@ import { Api } from '../../api/Api'
 import './createGenre.css'
 
 export default function CreateProfile(props) {
-  console.log("porps aqui",props)
-
   const handleSubmit = async e => {
     e.preventDefault()
     const name = e.target.name.value
 
     const playload = {
-      name
+      name,
     }
-    console.log("playload",playload)
     const response = await Api.buildApiPostRequest(
       Api.createGenreUrl(),
       playload,
-      true
+      true,
     )
 
-    if (response.status === 201) {    
+    if (response.status === 201) {
       props.history.push(`/`)
     }
-    console.log(response)
   }
 
   return (

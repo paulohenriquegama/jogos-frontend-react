@@ -3,7 +3,6 @@ import { Api } from '../../api/Api'
 import './createUser.css'
 
 export default function CreateGame(props) {
-
   const handleSubmit = async e => {
     e.preventDefault()
     const name = e.target.name.value
@@ -24,7 +23,7 @@ export default function CreateGame(props) {
     const response = await Api.buildApiPostRequest(
       Api.createUserUrl(),
       playload,
-      true
+      true,
     )
 
     const body = await response.json()
@@ -33,7 +32,6 @@ export default function CreateGame(props) {
       const id = body.id
       props.history.push(`/user/${id}`)
     }
-    console.log(response)
   }
 
   return (

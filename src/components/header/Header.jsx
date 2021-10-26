@@ -9,7 +9,6 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import ModalAdd from './modals/modalAdd/ModalAdd';
 import ModalUser from './modals/modalUser/ModalUser';
 import { JwtHandler } from '../../jwt-handler/JwtHandler';
-// import FadeMenu from './FadeMenu';
 
 export default function Header() {
   const [showAdd, setShowAdd] = useState(false);

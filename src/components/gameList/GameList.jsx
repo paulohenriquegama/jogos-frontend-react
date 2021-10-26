@@ -23,7 +23,6 @@ export default function GameList() {
       }
     }
     loadGame();
-    // document.documentElement.style.setProperty('--lengthList', games.length);
   },[])
 
   const handleArrowLeft = () =>{
@@ -33,8 +32,7 @@ export default function GameList() {
     if (x>0){
       x=0;
       setY(1);
-    }
-    
+    }   
     setScrollX(x);
   }
 
@@ -42,31 +40,19 @@ export default function GameList() {
     let x = scrollX - 280;
     let totalGames = games.length * 240;
     if ((window.innerWidth - (x/2)) >totalGames){
-      console.log('entrou')
       x=-240;
-      setY(1)
-      
+      setY(1)    
     }else{
-      console.log('entrou segundo')
-      
-      console.log('antes y=', y);
-
       x=- (y*240);
-      
-      console.log('depois y=', y);
       let fim = -totalGames
       setY(y+1);
       if(x<= fim){
-        console.log("entrou fim",y);
         x = fim + 250;
         setY(games.length);
       }
       
     }
     setScrollX(x);
-    console.log("innerWidt",window.innerWidth)
-    console.log("totalGame",totalGames)
-    console.log("x",x)
   }
 
   return (
@@ -77,8 +63,6 @@ export default function GameList() {
       <div className="gameList" style={{
         marginLeft: scrollX,
         width: games.length * 240
-        // maxWidth: 100%, 
-        // overflow: 'hidden'
          }}>
         <div className="arrowLeft" onClick={handleArrowLeft}>
           <NavigateBeforeIcon style={{fontSize: 80}}/>

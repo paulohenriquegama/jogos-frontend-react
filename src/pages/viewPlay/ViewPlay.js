@@ -29,7 +29,6 @@ export default function ViewGame(props) {
   }
 
   function qtdStar(note) {
-    console.log(note)
     if (note === 10) {
       return (
         <div>
@@ -94,6 +93,7 @@ export default function ViewGame(props) {
         </div>
         <div className="viewPlay-trailer">
           <iframe
+            title={game.title}
             width="100%"
             height="100%"
             src={`${game.gameplay.replace('watch?v=', 'embed/')}?autoplay=1`}

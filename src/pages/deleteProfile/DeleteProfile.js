@@ -5,20 +5,17 @@ import './deleteProfile.css'
 
 export default function DeleteProfile(props) {
   const id = props.match.params.id
-  console.log("props deleteProfile", props)
-
-  const [userCurrent, setUserCurrent] = useState("")
+  
+  const [userCurrent, setUserCurrent] = useState('')
 
   useEffect(() => {
     const loadUser = async () => {
-      const response = await Api.buildApiGetRequest(Api.readCurrentUser(),true)
+      const response = await Api.buildApiGetRequest(Api.readCurrentUser(), true)
       const results = await response.json()
       setUserCurrent(results.id)
     }
     loadUser()
   }, [])
-
-  console.log("userCurrent deleteProfile", userCurrent)
 
   const handleDelete = async event => {
     const response = await Api.buildApiDeleteRequest(
@@ -34,7 +31,7 @@ export default function DeleteProfile(props) {
   }
 
   const backButton = () => {
-    props.history.push(`/user/view/${id}`)
+    props.history.push(`/user/${userCurrent}`)
   }
 
   return (

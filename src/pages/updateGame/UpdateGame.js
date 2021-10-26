@@ -3,43 +3,40 @@ import { Api } from '../../api/Api'
 
 import Select from 'react-select'
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import './updateGame.css'
 
 export default function UpdateGame(props) {
-  const id = props.match.params.id;
+  const id = props.match.params.id
   const [game, setGame] = useState(undefined)
 
   const [genres, setGenres] = useState([])
   const [genresIds, setGenresIds] = useState([])
-  // const [genresDisconnectIds, setGenresDisconnectIds] = useState([])
 
   useEffect(() => {
     const loadGame = async () => {
-        const response = await Api.buildApiGetRequest(
-            Api.readByIdGameUrl(id),
-            true
-        );
+      const response = await Api.buildApiGetRequest(
+        Api.readByIdGameUrl(id),
+        true,
+      )
 
-        const results = await response.json();
+      const results = await response.json()
 
-        setGame(results);
-    };
+      setGame(results)
+    }
 
-    loadGame();
-  },[id]); 
-  
+    loadGame()
+  }, [id])
+
   useEffect(() => {
     const loadGenres = async () => {
       const response = await Api.buildApiGetRequest(
         Api.readAllGenresUrl(),
         true,
       )
-
       const results = await response.json()
-      console.log("results",results)
       setGenres(results)
     }
 
@@ -70,69 +67,56 @@ export default function UpdateGame(props) {
       genresIds,
       genresDisconnectIds,
     }
-    console.log("playload",playload)
+
     const response = await Api.buildApiPatchRequest(
       Api.updateGameUrl(id),
       playload,
-      true
+      true,
     )
 
     const body = await response.json()
 
     if (response.status === 200) {
-      toast.success("Sucesso!");
+      toast.success('Sucesso!')
       const id = body.id
       props.history.push(`/game/view/${id}`)
-    }else{
-      toast.error("Nenhuma mudança aconteceu!")
+    } else {
+      toast.error('Nenhuma mudança aconteceu!')
       props.history.push(`/game/view/${id}`)
     }
-    console.log("response ultimo",response)
   }
 
-  
   if (!game || !genres) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
   const options = genres.map(genre => ({
     value: genre.id,
     label: genre.name,
   }))
-  
+
   const selectedOptions = game.genres.map(genre => ({
     value: genre.id,
     label: genre.name,
   }))
   const handleGenreChange = selectedOption => {
     setGenresIds(selectedOption.map(option => option.value))
-    console.log('handleGenre', selectedOption)
   }
 
-  if(genresIds.length === 0) {
-    setGenresIds(selectedOptions.map(option => option.value));
+  if (genresIds.length === 0) {
+    setGenresIds(selectedOptions.map(option => option.value))
   }
-  
-  console.log('genresIds', genresIds)
-  console.log('game.genres',game.genres)
-  console.log('game',game)
-  console.log('options',options)
 
-  function validarDiferenca()
-    {
-        var r1 = options.map(option => option.value);
-        var r2 = genresIds;       
-        var r3 =[];
-        r1.forEach(function (element, index, array) {
-            if(r2.indexOf(element) == -1)
-               r3.push(element);
-        });
+  function validarDiferenca() {
+    var r1 = options.map(option => option.value)
+    var r2 = genresIds
+    var r3 = []
+    r1.forEach(function (element) {
+      if (r2.indexOf(element) === -1) r3.push(element)
+    })
 
-        return r3;
-    }
-    const disconnectIds = validarDiferenca()
-    console.log("disconnectIds", disconnectIds)
-    
-
+    return r3
+  }
+  const disconnectIds = validarDiferenca()
 
   return (
     <div>
@@ -141,29 +125,76 @@ export default function UpdateGame(props) {
           <h2>Cadastro de Jogo</h2>
         </div>
         <label htmlFor="title">Titulo:</label>
-        <input type="text" id="title" name="title" defaultValue={game.title} required/>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          defaultValue={game.title}
+          required
+        />
 
         <label htmlFor="capa">Capa:</label>
-        <input type="text" id="capa" name="capa" defaultValue={game.capa} required/>
+        <input
+          type="text"
+          id="capa"
+          name="capa"
+          defaultValue={game.capa}
+          required
+        />
 
         <label htmlFor="description">Descrição:</label>
-        <textarea type="text" id="description" name="description" defaultValue={game.description}/>
+        <textarea
+          type="text"
+          id="description"
+          name="description"
+          defaultValue={game.description}
+        />
 
         <label htmlFor="year">Ano:</label>
-        <input type="text" id="year" name="year" defaultValue={game.year} required/>
+        <input
+          type="text"
+          id="year"
+          name="year"
+          defaultValue={game.year}
+          required
+        />
 
         <label htmlFor="note">Nota:</label>
-        <input type="text" id="note" name="note" defaultValue={game.note} required/>
+        <input
+          type="text"
+          id="note"
+          name="note"
+          defaultValue={game.note}
+          required
+        />
 
         <label htmlFor="trailer">Trailer:</label>
-        <input type="text" id="trailer" name="trailer" defaultValue={game.trailer} required/>
+        <input
+          type="text"
+          id="trailer"
+          name="trailer"
+          defaultValue={game.trailer}
+          required
+        />
 
         <label htmlFor="gameplay">Game Play:</label>
-        <input type="text" id="gameplay" name="gameplay" defaultValue={game.gameplay} required/>
+        <input
+          type="text"
+          id="gameplay"
+          name="gameplay"
+          defaultValue={game.gameplay}
+          required
+        />
 
         <label htmlFor="genre">Genero:</label>
-        
-        <Select isMulti options={options} onChange={handleGenreChange} defaultValue={selectedOptions} className="select" />
+
+        <Select
+          isMulti
+          options={options}
+          onChange={handleGenreChange}
+          defaultValue={selectedOptions}
+          className="select"
+        />
 
         <button type="submit" class="btn-pattern">
           Enviar

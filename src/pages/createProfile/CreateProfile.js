@@ -4,22 +4,19 @@ import { Api } from '../../api/Api'
 import './createProfile.css'
 
 export default function CreateProfile(props) {
-  console.log("porps aqui",props)
-  const [userCurrent, setUserCurrent] = useState("")
+  const [userCurrent, setUserCurrent] = useState('')
 
   useEffect(() => {
     const loadUser = async () => {
-      const response = await Api.buildApiGetRequest(Api.readCurrentUser(),true)
+      const response = await Api.buildApiGetRequest(Api.readCurrentUser(), true)
       const results = await response.json()
       setUserCurrent(results.id)
     }
     loadUser()
   }, [])
 
-  console.log("userCurrent",userCurrent)
-
   if (!userCurrent) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   const handleSubmit = async e => {
@@ -33,17 +30,16 @@ export default function CreateProfile(props) {
       image,
       userId,
     }
-    console.log("playload",playload)
+
     const response = await Api.buildApiPostRequest(
       Api.createProfileUrl(),
       playload,
-      true
+      true,
     )
 
-    if (response.status === 201) {    
+    if (response.status === 201) {
       props.history.push(`/user/${userCurrent}`)
     }
-    console.log(response)
   }
 
   return (

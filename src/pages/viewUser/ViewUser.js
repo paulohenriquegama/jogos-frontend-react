@@ -17,6 +17,7 @@ export default function ViewUser(props) {
         setUser(results)
     }
     loadUser()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(() => {
@@ -28,8 +29,6 @@ export default function ViewUser(props) {
     loadProfiles()
   }, []);
   
-  console.log("props viewUser", props)
-  console.log('User', user)
   return (
     <div className="viewUser">
       <div className="viewUser-title">

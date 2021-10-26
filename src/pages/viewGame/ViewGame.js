@@ -24,10 +24,8 @@ export default function ViewGame(props) {
 
   useEffect(() => {
     if (game) {
-      console.log('favorite dentro efect antes do set', favorite)
       let x = game.favorite
       setFavorite(x)
-      console.log('favorite dentro efect=', favorite)
     }
   }, [game])
 
@@ -35,13 +33,9 @@ export default function ViewGame(props) {
     return <h3>Loading..</h3>
   }
 
-  console.log('favorite 1=', favorite)
-  // console.log("game favorite", game.favorite)
-
   async function handleFavorite() {
-    console.log('favorite dentro handle antes', favorite)
     setFavorite(!favorite)
-    console.log('favorite dentro handle', favorite)
+
     const title = game.title
     const capa = game.capa
     const description = game.description
@@ -61,7 +55,6 @@ export default function ViewGame(props) {
       gameplay,
       favorite,
     }
-    console.log('O playload é', payload)
     // Faz uma requisição no backend
     const response = await Api.buildApiPatchRequest(
       Api.updateGameUrl(id),
@@ -70,7 +63,6 @@ export default function ViewGame(props) {
     )
 
     const body = await response.json()
-    console.log('body é', body)
 
     if (response.status === 200) {
       // Product updated successfully
@@ -79,9 +71,7 @@ export default function ViewGame(props) {
       props.history.push(`/game/view/${id}`)
     } else {
       // Error
-      console.log('deu erro', favorite)
       setFavorite(!favorite)
-      console.log('depois do erro', favorite)
     }
   }
 
@@ -150,7 +140,7 @@ export default function ViewGame(props) {
                 <FavoriteBorderIcon fontSize="large" />
               )}
             </div>
-            <img src={game.capa} />
+            <img src={game.capa} alt={game.title}/>
           </div>
           <div className="viewGame-note-year">
             <div className="viewGame-note">

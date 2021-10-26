@@ -7,8 +7,6 @@ import './profileCard.css'
 import { Link } from 'react-router-dom';
 
 export default function ProfileCard({profile, userId}) {
-  
-  console.log('entrou profileCard')
   return (
     <div className="profileCard">
       <div className="profileCard-title">
