@@ -140,8 +140,9 @@ export default function ViewGame(props) {
                 <FavoriteBorderIcon fontSize="large" />
               )}
             </div>
-            <img src={game.capa} alt={game.title}/>
-          </div>
+            <div className="viewGame-capa">
+              <img src={game.capa} alt={game.title}/></div>
+            </div>
           <div className="viewGame-note-year">
             <div className="viewGame-note">
               <h3>{qtdStar(+game.note)}</h3>

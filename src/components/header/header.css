@@ -56,7 +56,7 @@
 
 /* Midia */
 
-@media only screen and (max-width: 519px) {
+@media only screen and (max-width: 550px) {
   .header-title{
     display: none;
   }
