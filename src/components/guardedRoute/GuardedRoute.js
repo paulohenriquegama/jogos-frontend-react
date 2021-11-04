@@ -2,6 +2,8 @@ import React from "react";
 import { Redirect, Route } from "react-router";
 import { JwtHandler } from "../../jwt-handler/JwtHandler";
 
+import { toast } from 'react-toastify'
+
 export default function GuardedRoute({ component: Component, ...rest }) {
     const auth = JwtHandler.isJwtValid();
 
@@ -12,7 +14,10 @@ export default function GuardedRoute({ component: Component, ...rest }) {
                 auth === true ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect to="/login" />
+                    <div>
+                        {toast.error('Acesso negado, realize o login.',{theme: "colored"})}
+                        <Redirect to="/login" />
+                    </div>
                 )
             }
         />

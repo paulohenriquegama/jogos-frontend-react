@@ -1,5 +1,8 @@
 import { Api } from '../../api/Api'
 
+import { toast } from 'react-toastify'
+
+
 import './createGenre.css'
 
 export default function CreateProfile(props) {
@@ -17,6 +20,8 @@ export default function CreateProfile(props) {
     )
 
     if (response.status === 201) {
+      toast.success('Gênero criado com sucesso!',{theme: "dark"})
+
       props.history.push(`/`)
     }
   }

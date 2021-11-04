@@ -46,10 +46,10 @@ export default function UpdateProfile(props) {
     )
 
     if (response.status === 200) {
-      toast.success('Perfil editado com sucesso!')
+      toast.success('Perfil editado com sucesso!',{theme: "dark"})
       props.history.push(`/user/${profile.userId}`)
     }else{
-      toast.error('Não foi possível editar o perfil!')
+      toast.error('Não foi possível editar o perfil!',{theme: "colored"})
     }
   }
 
