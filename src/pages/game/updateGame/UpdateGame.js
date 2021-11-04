@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
 
 import Select from 'react-select'
 
 import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 import './updateGame.css'
 
@@ -43,6 +42,7 @@ export default function UpdateGame(props) {
     loadGenres()
   }, [])
 
+
   const handleSubmit = async e => {
     e.preventDefault()
     const title = e.target.title.value
@@ -77,11 +77,11 @@ export default function UpdateGame(props) {
     const body = await response.json()
 
     if (response.status === 200) {
-      toast.success('Sucesso!')
+      toast.success('Jogo editado com sucesso!',{theme: "dark"})
       const id = body.id
       props.history.push(`/game/view/${id}`)
     } else {
-      toast.error('Nenhuma mudança aconteceu!')
+      toast.error('Nenhuma mudança aconteceu!',{theme: "colored"})
       props.history.push(`/game/view/${id}`)
     }
   }

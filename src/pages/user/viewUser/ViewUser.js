@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
-import ProfileCard from '../../components/cardList/profileCard/ProfileCard'
+import { Api } from '../../../api/Api'
+import ProfileCard from '../../../components/cardList/profileCard/ProfileCard'
 
 import './viewUser.css'
 
@@ -28,7 +28,11 @@ export default function ViewUser(props) {
     }
     loadProfiles()
   }, []);
-  
+
+  if (!profiles) {
+    return <h3>Loading..</h3>
+  }
+  console.log(profiles)
   return (
     <div className="viewUser">
       <div className="viewUser-title">
@@ -64,7 +68,7 @@ export default function ViewUser(props) {
         </div>
 
         <div className="viewUser-cards">
-          {profiles?.map((profile,i) => (
+          {profiles.map((profile,i) => (
             <ProfileCard profile={profile} key={`profile-${i}`} userId={user.id} />
           ))}
         </div>

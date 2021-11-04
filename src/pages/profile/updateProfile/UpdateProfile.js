@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
+
+import { toast } from 'react-toastify'
+
 
 import './updateProfile.css'
 
-export default function CreateProfile(props) {
+export default function UpdateProfile(props) {
   const id = +props.match.params.id
+  
+
 
   const [profile, setProfile] = useState(undefined)
   useEffect(() => {
@@ -20,8 +25,8 @@ export default function CreateProfile(props) {
     }
 
     loadProfile()
+    
   }, [id])
-
   const handleSubmit = async e => {
     e.preventDefault()
     const title = e.target.title.value
@@ -41,7 +46,10 @@ export default function CreateProfile(props) {
     )
 
     if (response.status === 200) {
+      toast.success('Perfil editado com sucesso!')
       props.history.push(`/user/${profile.userId}`)
+    }else{
+      toast.error('Não foi possível editar o perfil!')
     }
   }
 

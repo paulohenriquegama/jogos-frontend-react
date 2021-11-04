@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
+
+import { toast } from 'react-toastify'
+
 
 import './deleteProfile.css'
 
@@ -24,13 +27,15 @@ export default function DeleteProfile(props) {
     )
 
     if (response.status === 204) {
+      toast.success('Perfil deletado com sucesso!',{theme: "dark"})
       props.history.push(`/user/${userCurrent}`)
     } else {
-      // Error
+      toast.error('Não foi possível excluir o perfil!',{theme: "colored"})
     }
   }
 
   const backButton = () => {
+    toast.info('Nenhuma alteração realizada.',{theme: "dark"})
     props.history.push(`/user/${userCurrent}`)
   }
 

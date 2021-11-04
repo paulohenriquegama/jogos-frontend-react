@@ -1,21 +1,29 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+
+// Game
+import CreateGame from '../pages/game/createGame/CreateGame'
+import ViewGame from '../pages/game/viewGame/ViewGame'
+import UpdateGame from '../pages/game/updateGame/UpdateGame'
+import DeleteGame from '../pages/game/deleteGame/DeleteGame'
+
+// Profile
+import CreateProfile from '../pages/profile/createProfile/CreateProfile'
+import DeleteProfile from '../pages/profile/deleteProfile/DeleteProfile'
+import UpdateProfile from '../pages/profile/updateProfile/UpdateProfile'
+
+// User
+import CreateUser from '../pages/user/createUser/CreateUser'
+import ViewUser from '../pages/user/viewUser/ViewUser'
+
+
 import Home from './../pages/home/Home'
-import CreateGame from '../pages/createGame/CreateGame'
-import ViewGame from '../pages/viewGame/ViewGame'
 import ViewPlay from '../pages/viewPlay/ViewPlay'
-import NotFound from '../pages/notFound/NotFound'
-import CreateUser from '../pages/createUser/CreateUser'
-import ViewUser from '../pages/viewUser/ViewUser'
-import CreateProfile from '../pages/createProfile/CreateProfile'
-import DeleteGame from '../pages/deleteGame/DeleteGame'
-import DeleteProfile from '../pages/deleteProfile/DeleteProfile'
-import UpdateProfile from '../pages/updateProfile/UpdateProfile'
-import UpdateGame from '../pages/updateGame/UpdateGame'
 import Login from '../pages/login/Login'
 import GuardedRoute from '../components/guardedRoute/GuardedRoute'
 import Logout from '../pages/logout/Logout'
 import CreateGenre from '../pages/createGenre/CreateGenre'
+import NotFound from '../pages/notFound/NotFound'
 
 function Routes() {
   return (

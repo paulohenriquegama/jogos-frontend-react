@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
 
 import Select from 'react-select'
+
+import { toast } from 'react-toastify'
 
 import './createGame.css'
 
@@ -40,8 +42,11 @@ export default function CreateGame(props) {
     const body = await response.json()
 
     if (response.status === 201) {
+      toast.success('Jogo criado com sucesso!',{theme: "dark"})
       const id = body.id
       props.history.push(`/game/view/${id}`)
+    }else{
+      toast.error('Não foi possível criar o jogo',{theme: "colored"})
     }
   }
 

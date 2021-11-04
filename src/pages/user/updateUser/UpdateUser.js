@@ -1,4 +1,4 @@
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
 import React, { useEffect, useState } from 'react'
 
 import './updateUser.css'

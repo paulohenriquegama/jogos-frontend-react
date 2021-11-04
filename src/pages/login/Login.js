@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { Api } from '../../api/Api'
 import { JwtHandler } from '../../jwt-handler/JwtHandler'
 
+import { toast } from 'react-toastify'
+
+
 import './login.css'
 
 export default function Login(props) {
@@ -26,6 +29,7 @@ export default function Login(props) {
 
     if (response.status === 200) {
       // Login successfully
+      toast.success('Login realizado com sucesso!',{theme: "dark"})
 
       const accessToken = body.accessToken
 
@@ -36,6 +40,8 @@ export default function Login(props) {
       props.history.push(`/`)
     } else {
       // Error
+      toast.error('Usuário ou senha invalidos.',{theme: "colored"})
+
     }
   }
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
+
+import { toast } from 'react-toastify'
 
 import './createProfile.css'
 
@@ -38,7 +40,11 @@ export default function CreateProfile(props) {
     )
 
     if (response.status === 201) {
+      toast.success('Perfil criado com sucesso!',{theme: "dark"})
       props.history.push(`/user/${userCurrent}`)
+    }else{
+      toast.error('Dados invalidos, verifique os campos obrigatórios.',{theme: "colored"})
+
     }
   }
 

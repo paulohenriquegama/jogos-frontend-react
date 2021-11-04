@@ -1,5 +1,8 @@
 import React from 'react'
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
+
+import { toast } from 'react-toastify'
+
 
 import './deleteGame.css'
 
@@ -14,15 +17,16 @@ export default function DeleteGame(props) {
 
     if (response.status === 204) {
       // Delete product successfully
-
+      toast.success('Jogo deletado com sucesso!',{theme: "dark"})
       // Navigate to home page
       props.history.push(`/`)
     } else {
-      // Error
+      toast.error('Não foi possível excluir o jogo.',{theme: "colored"})
     }
   }
 
   const backButton = () => {
+    toast.info('Nenhuma alteração realizada.')
     props.history.push(`/game/view/${id}`)
   }
 

@@ -1,4 +1,6 @@
-import { Api } from '../../api/Api'
+import { Api } from '../../../api/Api'
+
+import { toast } from 'react-toastify'
 
 import './createUser.css'
 
@@ -29,8 +31,11 @@ export default function CreateGame(props) {
     const body = await response.json()
 
     if (response.status === 201) {
+      toast.success('Usuário criado com sucesso!',{theme: "dark"})
       const id = body.id
       props.history.push(`/user/${id}`)
+    }else{
+      toast.error('Informações invalidas. favor verificar.',{theme: "colored"})
     }
   }
 
